@@ -1,0 +1,106 @@
+.resume-section { background: var(--bg-secondary); }
+.resume-bg-accent { display: none; }
+
+.resume-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+}
+
+.resume-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+
+.resume-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.resume-highlight:hover { border-color: var(--accent-primary); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+
+.highlight-icon { font-size: 20px; flex-shrink: 0; }
+.highlight-label { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--text-primary); line-height: 1.2; }
+.highlight-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.resume-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.resume-card-preview {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  animation: float 7s ease-in-out infinite;
+}
+
+.preview-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+
+.preview-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.preview-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--text-primary); margin-bottom: 2px; }
+.preview-title { font-size: 12px; color: var(--text-secondary); }
+.preview-divider { height: 1px; background: var(--border-color); margin-bottom: 16px; }
+.preview-section { margin-bottom: 16px; }
+
+.preview-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.preview-item { margin-bottom: 7px; }
+.preview-item-title { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 1px; }
+.preview-item-sub { font-size: 12px; color: var(--text-muted); }
+
+.preview-skills-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.preview-chip { padding: 2px 9px; background: var(--accent-light); border: 1px solid rgba(26,86,219,0.15); border-radius: 100px; font-size: 11px; font-weight: 600; color: var(--accent-primary); }
+
+.preview-download-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 7px 14px;
+  background: var(--accent-light);
+  border: 1px solid rgba(26,86,219,0.2);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+@media (max-width: 900px) {
+  .resume-inner { grid-template-columns: 1fr; gap: 40px; }
+  .resume-card-preview { max-width: 440px; animation: none; }
+}
+@media (max-width: 480px) {
+  .resume-highlights { grid-template-columns: 1fr; }
+  .resume-actions { flex-direction: column; }
+  .resume-actions .btn-primary, .resume-actions .btn-outline { width: 100%; justify-content: center; }
+}
